@@ -4,7 +4,7 @@
 
 <script defer src="javascript/association.js"></script>
 <c:import url="/header/header.jsp"></c:import>
-<div  class="alert alert-success ala" id="association" role="alert">
+<div class="alert alert-success ala" id="association" role="alert">
 	L'association a été ajoutée avec succès !</div>
 <br>
 <br>

@@ -40,29 +40,28 @@ public class Conducteur extends HttpServlet {
 		ConDao dao = new ConDao();
 		request.setAttribute("list", dao.read());
 		// System.out.println(dao.read());
-		
-		//chopper l'id dans l'url
-		String id_url=request.getParameter("id");
-		if(id_url!=null) {
-		//on transform id en int
-		int id=Integer.valueOf(id_url);
-		
-		
-		//FINDBY
-		Conducteurs cond=new Conducteurs(id);
-		
-		if(dao.findby(cond)!=null) {
-		//mettre les données dans des variables
-		String name=dao.findby(cond).getNom();
-		String prename=dao.findby(cond).getPrenom();
-		int id_cond=dao.findby(cond).getId();
-		////////////////////////////////////////////
-		//on creer les alias pour l'affichage
-		request.setAttribute("nom", name);
-		request.setAttribute("prenom", prename);
-		request.setAttribute("id", id_cond);
-		}
-		
+
+		// chopper l'id dans l'url
+		String id_url = request.getParameter("id");
+		if (id_url != null) {
+			// on transform id en int
+			int id = Integer.valueOf(id_url);
+
+			// FINDBY
+			Conducteurs cond = new Conducteurs(id);
+
+			if (dao.findby(cond) != null) {
+				// mettre les données dans des variables
+				String name = dao.findby(cond).getNom();
+				String prename = dao.findby(cond).getPrenom();
+				int id_cond = dao.findby(cond).getId();
+				////////////////////////////////////////////
+				// on creer les alias pour l'affichage
+				request.setAttribute("nom", name);
+				request.setAttribute("prenom", prename);
+				request.setAttribute("id", id_cond);
+			}
+
 		}
 		request.getRequestDispatcher("conducteur/conducteur.jsp").forward(request, response);
 	}
@@ -100,14 +99,14 @@ public class Conducteur extends HttpServlet {
 			String value = submit_value.replace("update-", "");
 			// transforme l'id en int
 			int id = Integer.valueOf(value);
-			
+
 			request.setAttribute("valeur", value);
 			// creer un conducteur
 			Conducteurs cond = new Conducteurs(id, nom, prenom);
 			// declencher update
 			dao.update(cond);
-			response.sendRedirect(request.getContextPath()+"/conducteur");
-			//doGet(request, response);
+			response.sendRedirect(request.getContextPath() + "/conducteur");
+			// doGet(request, response);
 		} else if (submit_value.indexOf("delete-") != -1) {
 			// recupere l'id en string
 			String value = submit_value.replace("delete-", "");
@@ -119,7 +118,7 @@ public class Conducteur extends HttpServlet {
 			dao.delete(cond);
 			doGet(request, response);
 		}
-		
+
 	}
 
 }

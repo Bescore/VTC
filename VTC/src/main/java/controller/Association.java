@@ -63,7 +63,7 @@ public class Association extends HttpServlet {
 		// TODO Auto-generated method stub
 		System.out.println(request.getParameter("conducteur"));
 		System.out.println(request.getParameter("vehicule"));
-		
+
 		// transformer les valeurs recuperé en int et creer un vehicule et un conducteur
 		/*********************************************/
 		int id_vehi = Integer.valueOf(request.getParameter("vehicule"));
@@ -77,15 +77,15 @@ public class Association extends HttpServlet {
 		Associations newAsso = new Associations(cond, vehi);
 		// déclencher la méthode add d'associationDao
 		AssociationDao assoDao = new AssociationDao();
-		
+
 		assoDao.add(newAsso);
 		try {
 			TimeUnit.SECONDS.sleep(2);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace() ;
+			e.printStackTrace();
 		}
-		
+
 		doGet(request, response);
 	}
 

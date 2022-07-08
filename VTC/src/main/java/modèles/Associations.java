@@ -4,7 +4,7 @@ public class Associations {
 	private int id_association;
 	private Vehicules vehicule;
 	private Conducteurs asso_conducteur;
-	
+
 	public Associations(int id_association, Vehicules vehicule, Conducteurs asso_conducteur) {
 		super();
 		this.id_association = id_association;
@@ -17,8 +17,6 @@ public class Associations {
 		this.vehicule = vehicule;
 		this.asso_conducteur = asso_conducteur;
 	}
-
-	
 
 	public int getId_association() {
 		return id_association;
@@ -49,9 +47,5 @@ public class Associations {
 		return "Association [id_association=" + id_association + ", vehicule=" + vehicule + ", asso_conducteur="
 				+ asso_conducteur + "]";
 	}
-	
-	
-	
-
 
 }

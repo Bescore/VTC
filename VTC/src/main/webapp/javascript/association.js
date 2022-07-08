@@ -12,6 +12,6 @@ $("select").change(function() {
 	}
 })
 
-$("#submit_asso").click(function(){
+$("#submit_asso").click(function() {
 	$("#association").show()
 });

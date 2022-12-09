@@ -8,3 +8,5 @@ Une application de gestion de conducteurs, de vehicules et l'assiociation des de
 
 
 #La base de donnée est dans le projet
+
+Edit : petit exercice d'ajax inclut, voir les pages/classes "test"
